@@ -36,10 +36,10 @@ O processo foi desenhado para ser rápido e livre de ambiguidades.
 ### 1\. Clone o Repositório
 
 ```bash
-# Navegue até seu diretório de projetos (ex: /srv)
-cd /srv
+# Navegue até seu diretório de projetos (ex: /srv/docker)
+cd /srv/docker
 
-git clone <URL_DO_SEU_REPOSITORIO>
+git clone https://github.com/RafaelQSantos-RQS/portainer-server
 cd portainer-server
 ```
 
