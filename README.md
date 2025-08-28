@@ -112,3 +112,11 @@ make sync
 ```
 
 **⚠️ Aviso:** Use o comando `sync` com extrema cautela. Ele foi projetado para ambientes onde o repositório é a única fonte da verdade e as instâncias locais devem apenas espelhar o estado remoto. Ele irá apagar permanentemente quaisquer alterações locais que você tenha feito.
+
+## 💬 Contato e Contribuições
+
+Este projeto é mantido como parte do meu portfólio pessoal e como um exercício prático de boas práticas de implantação.
+
+Se você encontrar algum problema, tiver sugestões de melhoria ou quiser discutir alguma das decisões de arquitetura adotadas aqui, sinta-se à vontade para abrir uma **Issue** neste repositório do GitHub.
+
+Para outros assuntos, você pode me encontrar no [LinkedIn](https://www.linkedin.com/in/rafael-queiroz-santos). O feedback construtivo é sempre bem-vindo.
