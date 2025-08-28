@@ -1,0 +1,36 @@
+name: portainer-server
+
+networks:
+  web:
+    name: ${EXTERNAL_NETWORK_NAME:-web}
+    external: true
+
+volumes:
+  server-data:
+    name: ${SERVER_DATA_VOLUME_NAME:-portainer-server-data}
+    external: true
+
+services:
+  server:
+    image: portainer/portainer-ce:${PORTAINER_COMMUNITY_VERSION}
+    restart: always
+    command: -H unix:///var/run/docker.sock
+    networks:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - server-data:/data
+    labels:
+      # --- General Settings ---
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+
+      # --- Router Settings ---
+      - "traefik.http.routers.portainer-server.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.portainer-server.entrypoints=websecure"
+      - "traefik.http.routers.portainer-server.service=portainer-server"
+      - "traefik.http.routers.portainer-server.tls=true"
+
+      # --- Services Settings ---
+      - "traefik.http.services.portainer-server.loadbalancer.server.port=9000"
+      - "traefik.http.services.portainer-server.loadbalancer.server.scheme=http"
