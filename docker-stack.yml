@@ -13,8 +13,7 @@ networks:
 
 volumes:
   server-data:
-    name: ${SERVER_DATA_VOLUME_NAME:-portainer_server_swarm_data}
-    external: true
+    name: portainer_server_swarm_data
 
 services:
   agent:
