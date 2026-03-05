@@ -1,4 +1,4 @@
-name: portainer-server
+name: portainer_server
 
 networks:
   web:
