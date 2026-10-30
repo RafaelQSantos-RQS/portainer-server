@@ -11,7 +11,7 @@ log() {
 
 main() {
     log "Deploying Portainer to Swarm..."
-    env $(grep -v '^#' "$ENV_FILE" | xargs) docker stack deploy -c docker-stack.yml portainer_server
+    env $(grep -v '^#' "$ENV_FILE" | xargs) docker stack deploy --with-registry-auth --detach=false --prune -c docker-stack.yml portainer_server
     log "Portainer deployed to Swarm"
 }
 
